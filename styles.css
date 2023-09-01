@@ -1,0 +1,367 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1E90FF;
+    height: 100vh;
+    width: 100vw;
+    user-select: none;
+    margin: 0;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.box {
+    width: 80%; /* Adjust the width for responsiveness */
+    max-width: 600px; /* Add a maximum width to prevent excessive stretching */
+    padding: 0px 0px 20px 0px; /* Add padding to create space at the top */
+    background-color: #ffff;
+    border: 2px solid #4169E1;
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    position: absolute; /* Position the box */
+    top: 5; /* Position at the top */
+    left: 50%; /* Center the box horizontally */
+    transform: translateX(-50%); /* Adjust to center horizontally */
+}
+
+#title {
+    background-color: #1b6cbd;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffff;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.getData {
+    padding: 20px;
+    line-height: 2.5;
+}
+
+.height-text, .weight-text {
+    font-family: 'Signika Negative', sans-serif;
+}
+
+#height, #weight, #calculated {
+    width: 50%;
+    max-width: 100px;
+    padding: 4px 8px;
+    border-radius: 5px;
+    border: 0.5px solid #212121;
+    color: #067c64;
+}
+
+#calculate, #reset {
+    margin: 10px 0;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #1E90FF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s, font-weight 0.2s; /* Adding transitions */
+}
+
+#calculate:hover, #reset:hover {
+    background-color: #1b6cbd; /* Darker color on hover */
+    cursor: pointer;
+    color: #ffff;
+    transform: scale(1.05);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+#reset:active {
+    background-color: #9a0808;
+    transform: scale(-0.99); 
+    font-weight: bold; 
+}
+#calculate:active{
+    background-color: #35dc1b;
+    transform: scale(-0.99); 
+    font-weight: bold; 
+}
+.calculated {
+    color: #067c64;
+    margin-top: 10px;
+}
+
+.guide {
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    margin-top: 20px;
+}
+
+#valid-height, #valid-weight {
+    display: none;
+    color: rgb(222, 56, 56);
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+#underMessage, #overMessage, #normalMessage {
+    display: none;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.mwButton, .mhButton, .phButton, .pwButton {
+    padding: 6px;
+    border-radius: 50%;
+    background-color: #1E90FF;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, background-color 0.2s;
+    cursor: pointer;
+}
+
+.mwButton:hover, .mhButton:hover, .phButton:hover, .pwButton:hover {
+    background-color: #1b6cbd;
+    transform: scale(1.1);
+}
+
+.mwButton:active, .mhButton:active, .pwButton:active, .phButton:active {
+    background-color: #35dc1b;
+    font-weight: bold;
+}
+
+#underMessage,#overMessage{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
+    display: none;
+    color: red;
+}
+
+#normalMessage{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
+    display: none;
+    color: green;
+}
+
+
+footer {
+    position: fixed;
+    bottom: -10px; 
+    left: 0;
+    width: 100%;
+    background-color: #212121;
+    text-align: center;
+    padding: 10px 0;
+    transition: transform 0.3s, color 0.3s, bottom 0.3s;
+    z-index: 1; 
+  }
+  
+  footer:hover {
+    transform: translateY(-0.9px);
+    color: #999999;
+    bottom: 0; 
+  }
+  
+  #developedBy {
+    font-size: 14px;
+    color: #999999;
+  }
+
+
+
+
+
+
+
+
+
+
+
+/* Default styles for larger screens */
+.box {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    /* Other styles remain the same */
+}
+
+/* Tablet-sized screens (up to 768px) */
+@media screen and (max-width: 768px) {
+    .box {
+        width: 90%;
+        max-width: none;
+    }
+
+    /* Adjust other styles as needed for tablet screens */
+
+    .height {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .height-text {
+        flex: 1;
+        text-align: left;
+    }
+
+    .mhButton, .phButton {
+        flex: 0.2;
+    }
+
+    .weight {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .weight-text {
+        flex: 1;
+        text-align: left;
+    }
+
+    .mwButton, .pwButton {
+        flex: 0.2;
+    }
+
+    /* Adjust other styles as needed for tablet-sized screens */
+}
+
+/* Mobile-sized screens (up to 480px) */
+@media screen and (min-width: 820px) and (max-width: 1180px) {
+    .box {
+
+            width: 95%;
+
+    }
+
+    /* Adjust other styles as needed for mobile screens */
+
+    .height, .weight {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .height-text, .weight-text {
+        margin-bottom: 10px; /* Add margin between text and icons */
+    }
+
+    .mhButton, .phButton, .mwButton, .pwButton {
+        display: inline-block;
+        margin: 0 5px; /* Add margin between icons */
+        font-size: 20px; /* Adjust icon size as needed */
+    }
+}
+
+
+    /* Adjust other styles as needed for mobile screens */
+
+    .height, .weight {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .mhButton, .phButton, .mwButton, .pwButton {
+        display: block;
+        margin: 0 auto;
+    }
+
+
+
+    @media screen and (width: 360px) and (height: 740px) {
+        .box {
+            width: 95%; /* Adjust the width for this specific screen size */
+            position: absolute; /* Position the box */
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+        }
+    }
+    
+    
+
+    @media screen and (width: 1080px) and (height: 914px) {
+        .box {
+            width: 100%; /* Take up the full width of the viewport */
+            max-width: none; /* Remove max-width constraint */
+            position: static; /* Remove positioning */
+            margin: 0 auto; /* Center horizontally */
+        }
+    }
+
+    @media screen and (width: 390px) and (height: 844px) {
+        .box {
+            width: 95%; /* Take up the full width of the viewport */
+            max-width: none; /* Remove max-width constraint */
+            position: static; /* Remove positioning */
+            margin: 0 auto; /* Center horizontally */
+        }
+    }
+
+    @media screen and (width: 414px) and (height: 896px) {
+        .box {
+            width: 95%; /* Adjust the width for this specific screen size */
+            position: absolute; /* Position the box */
+            top: 400px; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -30%); /* Center both horizontally and vertically */
+        }
+    }
+
+    @media screen and (width: 820px) and (height: 1180px) {
+        .box {
+            width: 90%; /* Take up the full width of the viewport */
+            max-width: none; /* Remove max-width constraint */
+            position: absolute; /* Remove positioning */
+            margin: 0 auto; /* Center horizontally */
+            margin-bottom: 10% ;
+        }
+
+        body {
+            height: 70vh;
+        }
+    }
+
+    @media screen and (width: 768px) and (height: 1024px){
+        .box {
+            width: 90%; /* Take up the full width of the viewport */
+            max-width: none; /* Remove max-width constraint */
+            position: absolute; /* Remove positioning */
+            margin: 0 auto; /* Center horizontally */
+            margin-bottom: 30% ;
+        }
+    }
+
+    @media screen and (width: 912px) and (height: 1368px){
+        .box {
+            width: 90%; /* Take up the full width of the viewport */
+            max-width: none; /* Remove max-width constraint */
+            position: absolute; /* Remove positioning */
+            margin: 0 auto; /* Center horizontally */
+            margin-bottom: 70% ;
+        }
+    }
+
+    @media screen and (width: 412px) and (height: 914px){
+        .box {
+            width: 90%; /* Take up the full width of the viewport */
+            max-width: none; /* Remove max-width constraint */
+            position: absolute; /* Remove positioning */
+            margin: 0 auto; /* Center horizontally */
+            margin-bottom: 70% ;
+        }   
+
+        body{
+            padding-bottom: 70%;
+        }
+    }
