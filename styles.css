@@ -31,6 +31,11 @@ body {
     top: 5; /* Position at the top */
     left: 50%; /* Center the box horizontally */
     transform: translateX(-50%); /* Adjust to center horizontally */
+    transition-duration: 0.5s;
+}
+.box:hover{
+    box-shadow: rgba(50,50,93,0.45) 0px 50px 100px -20px, rgba(0,0,0,0.3) 0px 30px 60px -30px, rgba(10,37,64,0.35) 0px -2px 6px 0px inset;
+    transform: translateY(-1px);
 }
 
 #title {
